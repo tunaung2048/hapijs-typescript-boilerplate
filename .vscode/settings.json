@@ -1,0 +1,30 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "oneDarkPro.editorTheme": "Onedark Pro",
+  // "workbench.editor.enablePreview": true,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "explorer.openEditors.visible": 0,
+  "editor.tabSize": 2,
+  "[json]": {
+    "editor.tabSize": 4
+  },
+
+  "files.associations": {
+    "*.ejs": "html",
+    "*.hb": "html",
+    "*.handlebars": "html"
+  },
+
+  // Emmet
+  "emmet.showSuggestionsAsSnippets": true,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+
+  "editor.formatOnSave": true,
+  // "prettier.tslintIntegration": true,
+  "tslint.autoFixOnSave": true,
+
+  "typescript.updateImportsOnFileMove.enabled": "always"
+}
