@@ -2,16 +2,16 @@
   "name": "hapijs-typescript-boilerplate",
   "version": "1.0.0",
   "description": "hapi.js typescript project boilerplate",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon --watch 'src/**/*' -e ts,tsx --exec ts-node ./src/server.ts -r dotenv/config",
+    "dev": "NODE_ENV=development nodemon --watch './**/*' -e ts,tsx --exec ts-node ./server.ts -r dotenv/config",
     "lint": "tslint -p tsconfig.json -c tslint.json && tslint -p tsconfig.test.json -c tslint.json",
     "compile": "tsc && node ./dist/server.js",
-    "copy:assets": "rsync -av src/assets dist/src",
-    "copy:views": "rsync -av src/views dist/src",
+    "copy:assets": "rsync -av assets dist/",
+    "copy:views": "rsync -av views dist/",
     "build": "tsc -p tsconfig.json",
     "build:all": "npm run lint && npm run build && npm run copy:assets && npm run copy:views",
-    "start": "node dist/src/server.js -r dotenv/config"
+    "start": "node dist/server.js -r dotenv/config"
   },
   "repository": {
     "type": "git",
