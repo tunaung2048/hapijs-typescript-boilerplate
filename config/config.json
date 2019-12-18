@@ -1,0 +1,82 @@
+{
+    "db": {
+        "pg": {
+            "host": {
+                "$filter": "env",
+                "$default": "localhost",
+                "production": {
+                    "$env": "PG_DB_HOST"
+                },
+                "development": "localhost"
+            },
+            "port": {
+                "$filter": "env",
+                "$default": 5432,
+                "production": {
+                    "$env": "PG_DB_PORT"
+                },
+                "development": "5432"
+            },
+            "dbname": {
+                "$filter": "env",
+                "$default": "dev_db",
+                "production": {
+                    "$env": "PG_DB_NAME"
+                },
+                "development": "dev_db"
+            },
+            "username": {
+                "$filter": "env",
+                "$default": "postgres",
+                "production": {
+                    "$env": "PG_DB_USERNAME"
+                },
+                "development": "postgres"
+            },
+            "password": {
+                "$filter": "env",
+                "$default": "null",
+                "production": {
+                    "$env": "PG_DB_PASSWORD"
+                },
+                "development": "null"
+            },
+            "pool": {
+                "min": {
+                    "$filter": "env",
+                    "$default": 2,
+                    "production": {
+                        "$env": "PG_DB_POOL_MIN"
+                    },
+                    "development": 2
+                },
+                "max": {
+                    "$filter": "env",
+                    "$default": 10,
+                    "production": {
+                        "$env": "PG_DB_POOL_MAX"
+                    },
+                    "development": 10
+                }
+            }
+        }
+    },
+    "knex": {
+        "migration_table": "knex_migrations"
+    },
+    "authentication": {
+        "secret": {
+            "$filter": "env",
+            "$default": "supersecurelongsecretstringthatarereallysuperstrong",
+            "production": {
+                "$env": "SECRET_STRING"
+            },
+            "development": "sadflweRQEGVH!#$T$GFDK@#HGVDLVHO@I#RKFDUY@#)DK@#WERQ#@ECXF@#RDW"
+        }
+    },
+    "pagination": {
+        "limit": {
+            "default": 10
+        }
+    }
+}
